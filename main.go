@@ -1,10 +1,9 @@
 package main
 
-
 import (
 	"github.com/Syfaro/telegram-bot-api"
-	"math/rand"
 	"log"
+	"math/rand"
 )
 
 func main() {
@@ -26,7 +25,7 @@ func main() {
 		log.Panic(err)
 	}
 
-	vocab := [...]string {"раз", "два", "три", "тест", "привет", "пока"}
+	vocab := [...]string{"раз", "два", "три", "тест", "привет", "пока"}
 
 	//length:= len(vocab)-1
 	// В канал updates будут приходить все новые сообщения.
@@ -34,7 +33,7 @@ func main() {
 		// Создав структуру - можно её отправить обратно боту
 		suggestion := vocab[rand.Intn(len(vocab))]
 
-		res := /*update.Message.Text + */suggestion
+		res := /*update.Message.Text + */ suggestion
 
 		msg := tgbotapi.NewMessage(update.Message.Chat.ID, res)
 		// msg.ReplyToMessageID = update.Message.MessageID
